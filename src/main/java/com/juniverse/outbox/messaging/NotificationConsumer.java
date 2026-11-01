@@ -1,4 +1,4 @@
-package com.juniverse.outbox.consumer;
+package com.juniverse.outbox.messaging;
 
 import java.nio.charset.StandardCharsets;
 import java.util.UUID;
@@ -6,6 +6,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.header.Header;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+import com.juniverse.outbox.service.NotificationService;
 
 /** Escucha el tema de eventos y delega el trabajo en {@link NotificationService}. */
 @Component

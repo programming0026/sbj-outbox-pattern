@@ -1,4 +1,4 @@
-package com.juniverse.outbox.order;
+package com.juniverse.outbox.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

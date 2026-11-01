@@ -1,4 +1,4 @@
-package com.juniverse.outbox.outbox;
+package com.juniverse.outbox.service;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import com.juniverse.outbox.config.OutboxProperties;
+import com.juniverse.outbox.model.OutboxEvent;
+import com.juniverse.outbox.repository.OutboxRepository;
 
 /**
  * El <b>relay</b>: lee los eventos pendientes del outbox y los publica en Kafka. Es la otra mitad del patrón.

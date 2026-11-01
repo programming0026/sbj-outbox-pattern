@@ -1,4 +1,4 @@
-package com.juniverse.outbox.order;
+package com.juniverse.outbox.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

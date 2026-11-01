@@ -8,11 +8,11 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.juniverse.outbox.order.CreateOrderRequest;
-import com.juniverse.outbox.order.Order;
-import com.juniverse.outbox.order.OrderService;
-import com.juniverse.outbox.outbox.OutboxRelay;
-import com.juniverse.outbox.outbox.OutboxRepository;
+import com.juniverse.outbox.dto.CreateOrderRequest;
+import com.juniverse.outbox.model.Order;
+import com.juniverse.outbox.service.OrderService;
+import com.juniverse.outbox.service.OutboxRelay;
+import com.juniverse.outbox.repository.OutboxRepository;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.Map;

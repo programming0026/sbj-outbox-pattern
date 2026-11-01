@@ -9,14 +9,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.juniverse.outbox.consumer.Notification;
-import com.juniverse.outbox.consumer.NotificationRepository;
-import com.juniverse.outbox.order.CreateOrderRequest;
-import com.juniverse.outbox.order.Order;
-import com.juniverse.outbox.order.OrderRepository;
-import com.juniverse.outbox.order.OrderService;
-import com.juniverse.outbox.outbox.OutboxRecorder;
-import com.juniverse.outbox.outbox.OutboxRepository;
+import com.juniverse.outbox.model.Notification;
+import com.juniverse.outbox.repository.NotificationRepository;
+import com.juniverse.outbox.dto.CreateOrderRequest;
+import com.juniverse.outbox.model.Order;
+import com.juniverse.outbox.repository.OrderRepository;
+import com.juniverse.outbox.service.OrderService;
+import com.juniverse.outbox.service.OutboxRecorder;
+import com.juniverse.outbox.repository.OutboxRepository;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.List;

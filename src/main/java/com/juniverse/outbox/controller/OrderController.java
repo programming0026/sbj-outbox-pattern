@@ -1,4 +1,4 @@
-package com.juniverse.outbox.order;
+package com.juniverse.outbox.controller;
 
 import jakarta.validation.Valid;
 import java.math.BigDecimal;
@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.juniverse.outbox.dto.CreateOrderRequest;
+import com.juniverse.outbox.model.Order;
+import com.juniverse.outbox.model.OrderStatus;
+import com.juniverse.outbox.service.OrderService;
 
 /** API REST de pedidos en {@code /api/orders}. */
 @RestController

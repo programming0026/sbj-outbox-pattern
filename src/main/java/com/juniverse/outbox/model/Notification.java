@@ -1,4 +1,4 @@
-package com.juniverse.outbox.consumer;
+package com.juniverse.outbox.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

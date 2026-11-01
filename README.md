@@ -56,16 +56,19 @@ Ni el orden ni un `try/catch` lo arreglan: siempre hay una ventana donde un fall
 ```text
 src/main/java/com/juniverse/outbox/
 ├── OutboxApplication.java
-├── order/                     # el negocio: Order, OrderService, OrderController
-├── outbox/
-│   ├── OutboxEvent.java       # fila de la tabla outbox_events
+├── controller/                # OrderController, OutboxController, NotificationController
+├── service/
+│   ├── OrderService.java      # el negocio
 │   ├── OutboxRecorder.java    # escribe el evento; exige transacción abierta (Propagation.MANDATORY)
 │   ├── OutboxRelay.java       # publica en Kafka y marca como enviado
 │   ├── OutboxScheduler.java   # dispara el relay y la limpieza
-│   └── OutboxRepository.java  # incluye la consulta FOR UPDATE SKIP LOCKED
-├── consumer/                  # NotificationConsumer + NotificationService idempotente
-└── config/KafkaTopicConfig.java
-src/main/resources/schema.sql  # tablas e índice parcial de pendientes
+│   └── NotificationService.java  # consumidor idempotente
+├── messaging/                 # NotificationConsumer
+├── repository/                # OrderRepository, OutboxRepository (consulta FOR UPDATE SKIP LOCKED), NotificationRepository, ProcessedMessageRepository
+├── model/                     # Order, OrderStatus, OutboxEvent (fila de outbox_events), Notification, ProcessedMessage
+├── dto/                       # CreateOrderRequest
+├── exception/                 # OrderNotFoundException, OrderAlreadyCancelledException
+└── config/                    # KafkaTopicConfig, OutboxProperties
 ```
 
 Detalles que conviene notar:

@@ -1,4 +1,4 @@
-package com.juniverse.outbox.outbox;
+package com.juniverse.outbox.repository;
 
 import java.time.Instant;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import com.juniverse.outbox.model.OutboxEvent;
 
 /** Acceso a la tabla del outbox. */
 public interface OutboxRepository extends JpaRepository<OutboxEvent, UUID> {

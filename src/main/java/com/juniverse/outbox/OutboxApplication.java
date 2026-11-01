@@ -1,6 +1,6 @@
 package com.juniverse.outbox;
 
-import com.juniverse.outbox.outbox.OutboxProperties;
+import com.juniverse.outbox.config.OutboxProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

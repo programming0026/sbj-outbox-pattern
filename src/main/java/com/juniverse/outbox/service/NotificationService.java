@@ -1,10 +1,14 @@
-package com.juniverse.outbox.consumer;
+package com.juniverse.outbox.service;
 
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.juniverse.outbox.model.Notification;
+import com.juniverse.outbox.model.ProcessedMessage;
+import com.juniverse.outbox.repository.NotificationRepository;
+import com.juniverse.outbox.repository.ProcessedMessageRepository;
 
 /**
  * Procesa un evento de forma <b>idempotente</b>: como Kafka y el relay garantizan "al menos una vez", el mismo evento puede

@@ -1,4 +1,4 @@
-package com.juniverse.outbox.order;
+package com.juniverse.outbox.model;
 
 /** Estado de un pedido. */
 public enum OrderStatus {

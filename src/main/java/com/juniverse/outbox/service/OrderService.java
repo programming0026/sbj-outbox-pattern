@@ -1,10 +1,15 @@
-package com.juniverse.outbox.order;
+package com.juniverse.outbox.service;
 
-import com.juniverse.outbox.outbox.OutboxRecorder;
 import java.math.BigDecimal;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.juniverse.outbox.dto.CreateOrderRequest;
+import com.juniverse.outbox.exception.OrderAlreadyCancelledException;
+import com.juniverse.outbox.exception.OrderNotFoundException;
+import com.juniverse.outbox.model.Order;
+import com.juniverse.outbox.model.OrderStatus;
+import com.juniverse.outbox.repository.OrderRepository;
 
 /**
  * Casos de uso del pedido. Fíjate en que NO se usa {@code KafkaTemplate} aquí: el servicio solo escribe en la base de datos

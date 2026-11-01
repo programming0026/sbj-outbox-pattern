@@ -1,4 +1,4 @@
-package com.juniverse.outbox.outbox;
+package com.juniverse.outbox.config;
 
 import java.time.Duration;
 import org.springframework.boot.context.properties.ConfigurationProperties;

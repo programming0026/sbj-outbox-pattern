@@ -1,9 +1,11 @@
-package com.juniverse.outbox.outbox;
+package com.juniverse.outbox.controller;
 
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.juniverse.outbox.config.OutboxProperties;
+import com.juniverse.outbox.repository.OutboxRepository;
 
 /** Estado del outbox, útil para monitorear (un "pendientes" que crece indica que Kafka no está recibiendo). */
 @RestController

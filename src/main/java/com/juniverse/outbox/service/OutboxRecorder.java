@@ -1,10 +1,12 @@
-package com.juniverse.outbox.outbox;
+package com.juniverse.outbox.service;
 
 import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tools.jackson.databind.json.JsonMapper;
+import com.juniverse.outbox.model.OutboxEvent;
+import com.juniverse.outbox.repository.OutboxRepository;
 
 /**
  * Registra eventos en el outbox. Usa {@link Propagation#MANDATORY}: si se llama SIN una transacción abierta lanza una
