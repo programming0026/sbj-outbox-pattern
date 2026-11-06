@@ -66,7 +66,7 @@ src/main/java/com/juniverse/outbox/
 ├── messaging/                 # NotificationConsumer
 ├── repository/                # OrderRepository, OutboxRepository (consulta FOR UPDATE SKIP LOCKED), NotificationRepository, ProcessedMessageRepository
 ├── model/                     # Order, OrderStatus, OutboxEvent (fila de outbox_events), Notification, ProcessedMessage
-├── dto/                       # CreateOrderRequest
+├── dto/                       # CreateOrderRequest, OrderResponse, NotificationView, OrderEventPayload (contenido del evento)
 ├── exception/                 # OrderNotFoundException, OrderAlreadyCancelledException
 └── config/                    # KafkaTopicConfig, OutboxProperties
 ```

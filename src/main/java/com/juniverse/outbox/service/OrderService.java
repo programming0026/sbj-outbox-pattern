@@ -1,6 +1,6 @@
 package com.juniverse.outbox.service;
 
-import java.math.BigDecimal;
+import com.juniverse.outbox.dto.OrderEventPayload;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -79,16 +79,5 @@ public class OrderService {
 
     private static OrderEventPayload payload(Order order) {
         return new OrderEventPayload(order.getId(), order.getCustomer(), order.getAmount(), order.getStatus().name());
-    }
-
-    /**
-     * Contenido de los eventos de pedido.
-     *
-     * @param orderId pedido
-     * @param customer cliente
-     * @param amount importe
-     * @param status estado tras el cambio
-     */
-    public record OrderEventPayload(UUID orderId, String customer, BigDecimal amount, String status) {
     }
 }

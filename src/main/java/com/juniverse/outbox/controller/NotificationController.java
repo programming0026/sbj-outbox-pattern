@@ -1,5 +1,6 @@
 package com.juniverse.outbox.controller;
 
+import com.juniverse.outbox.dto.NotificationView;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,16 +12,6 @@ import com.juniverse.outbox.repository.NotificationRepository;
 @RestController
 @RequestMapping("/api/notifications")
 public class NotificationController {
-
-    /**
-     * Notificación para mostrar.
-     *
-     * @param eventId id del evento
-     * @param eventType tipo de evento
-     * @param payload contenido recibido
-     */
-    public record NotificationView(java.util.UUID eventId, String eventType, String payload) {
-    }
 
     private final NotificationRepository repository;
 

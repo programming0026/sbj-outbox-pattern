@@ -1,9 +1,8 @@
 package com.juniverse.outbox.controller;
 
+import com.juniverse.outbox.dto.OrderResponse;
 import jakarta.validation.Valid;
-import java.math.BigDecimal;
 import java.net.URI;
-import java.time.Instant;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,30 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.juniverse.outbox.dto.CreateOrderRequest;
-import com.juniverse.outbox.model.Order;
-import com.juniverse.outbox.model.OrderStatus;
 import com.juniverse.outbox.service.OrderService;
 
 /** API REST de pedidos en {@code /api/orders}. */
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
-
-    /**
-     * Pedido tal como lo ve el cliente.
-     *
-     * @param id identificador
-     * @param customer cliente
-     * @param amount importe
-     * @param status estado
-     * @param createdAt fecha de alta
-     */
-    public record OrderResponse(UUID id, String customer, BigDecimal amount, OrderStatus status, Instant createdAt) {
-
-        static OrderResponse from(Order order) {
-            return new OrderResponse(order.getId(), order.getCustomer(), order.getAmount(), order.getStatus(), order.getCreatedAt());
-        }
-    }
 
     private final OrderService service;
 
